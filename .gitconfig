@@ -1,11 +1,11 @@
 # -*- sh -*-
 
 [user]
-    name = Shahbaz Tariq
-    email = shahbaz@ssst.co
+    name = Malertach
+    email = 
 
 [github]
-    user = shahbaztariq
+    user = Malertach
 
 [core]
     excludesfile = ~/.globalignore
