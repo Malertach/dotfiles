@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
 # create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$_";
+    mkdir -p "$@" && cd "$_" || return 1;
 }
 
 # determine size of a file or total size of a directory
@@ -10,9 +11,9 @@ function fs() {
     else
         local arg=-sh;
     fi
-    if [[ -n "$@" ]]; then
+    if [[ -n "$*" ]]; then
         du $arg -- "$@";
     else
-        du $arg .[^.]* *;
+        du $arg -- .[^.]* *;
     fi;
 }
