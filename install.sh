@@ -12,6 +12,7 @@ rm -rf ~/.functions
 rm -rf ~/.gitconfig
 rm -rf ~/.globalignore
 rm -rf ~/.inputrc
+rm -rf ~/.path
 
 ln -nfs "$DOTDIR"/.aliases ~/
 ln -nfs "$DOTDIR"/.bash_profile ~/
@@ -21,3 +22,4 @@ ln -nfs "$DOTDIR"/.functions ~/
 ln -nfs "$DOTDIR"/.gitconfig ~/
 ln -nfs "$DOTDIR"/.globalignore ~/
 ln -nfs "$DOTDIR"/.inputrc ~/
+ln -nfs "$DOTDIR"/.path ~/

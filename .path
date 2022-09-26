@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# adaptations to $PATH
+
+# rust environment
+# shellcheck source=/dev/null # checking for existence and reading rights
+[ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
