@@ -1,25 +1,18 @@
 #!/usr/bin/env bash
-
-echo "Installing DotFiles"
-
+# files to install in home dir
+FILES=(.aliases .bash_profile .bash_prompt .bashrc .functions .gitconfig .globalignore .inputrc .path)
+# source of files to install
 DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-rm -rf ~/.aliases
-rm -rf ~/.bash_profile
-rm -rf ~/.bash_prompt
-rm -rf ~/.bashrc
-rm -rf ~/.functions
-rm -rf ~/.gitconfig
-rm -rf ~/.globalignore
-rm -rf ~/.inputrc
-rm -rf ~/.path
+# create backup directory
+mkdir ~/.dotfiles_bak.d
 
-ln -nfs "$DOTDIR"/.aliases ~/
-ln -nfs "$DOTDIR"/.bash_profile ~/
-ln -nfs "$DOTDIR"/.bash_prompt ~/
-ln -nfs "$DOTDIR"/.bashrc ~/
-ln -nfs "$DOTDIR"/.functions ~/
-ln -nfs "$DOTDIR"/.gitconfig ~/
-ln -nfs "$DOTDIR"/.globalignore ~/
-ln -nfs "$DOTDIR"/.inputrc ~/
-ln -nfs "$DOTDIR"/.path ~/
+echo "Installing DotFiles"
+for file in ${FILES[*]}; do
+    # make backup, if no backup exists already
+    cp -Ln ~/"$file" ~/dotfiles_bak.d/"$file"
+    # remove old dotfile
+    rm -rf ~/"$file"
+    # insert new dotfile
+    ln -nfs "$DOTDIR"/"$file" ~/
+done
