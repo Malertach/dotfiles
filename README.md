@@ -1,6 +1,5 @@
 # dotfiles
 Bash Config files with usefull settings and a colorful bash prompt
-![grafik](https://user-images.githubusercontent.com/22221400/192580838-d98a0170-4826-4436-a2f6-1e37d2167f9b.png)
 
 ## Features
 - Current user host and working directory always shown
@@ -19,6 +18,7 @@ Bash Config files with usefull settings and a colorful bash prompt
 ```bash
 git clone https://github.com/Malertach/dotfiles.git;
 cd dotfiles;
+chmod u+x install.sh;
 ./install.sh;
 exec bash
 ```
