@@ -16,6 +16,9 @@ unset file;
 # append to the bash history file, rather than overwriting it
 shopt -s histappend;
 
+# fix minor spelling mistakes while using cd
+shopt -s cdspell
+
 # enable some bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * recursive globbing, e.g. `echo **/*.txt`
