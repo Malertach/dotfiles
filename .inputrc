@@ -18,6 +18,9 @@ set completion-query-items 200
 # ignore case when using autocompletion
 set completion-ignore-case on
 
+# colorize matched prefix during autocompletion
+set colored-completion-prefix on
+
 # show extra file information when completing, like `ls -F` does
 set visible-stats on
 
