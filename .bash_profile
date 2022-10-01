@@ -26,9 +26,9 @@ for option in autocd globstar; do
     shopt -s "$option" 2> /dev/null;
 done;
 
-# add tab completion for many bash commands
-# rust-lang
-default_rust_toolchain=$(rustup default 2> /dev/null | cut -d' ' -f1)
-rust_completion_file="$HOME/.rustup/toolchains/$default_rust_toolchain/etc/bash_completion.d/cargo"
-# shellcheck source=/dev/null # checking for existence and reading rights done
-[ -r "$rust_completion_file" ] && source "$rust_completion_file";
+# add tab completion for many commands like rustup and cargo
+for file in ~/.local/share/bash-completion/completions/*; do
+    # shellcheck source=/dev/null # checking for existence and reading rights
+    [ -r "$file" ] && source "$file";
+done;
+unset file;
