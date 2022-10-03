@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # files to install in home dir
-FILES=(.aliases .bash_profile .bash_prompt .bashrc .functions .gitconfig .globalignore .inputrc .path)
+FILES=(.aliases .bash_profile .bash_prompt .bashrc .functions .inputrc .path)
 # source of files to install
 DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
